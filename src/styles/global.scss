@@ -1,0 +1,48 @@
+
+@import "./colors";
+
+:root {
+    --background: #{$background};
+    --light-background: #{$light-background};
+    --purple: #{$purple};
+    --light-black: #{$light-black};
+    --light-blue: #{$light-blue};
+    --blue: #{$blue};
+    --white: #{$white};
+}
+
+*  {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body {
+    background-image: url("/src/assets/background-sky.png");
+    background-color: #{ $background };
+}
+
+body, input, textarea, button {
+    font-family: 'Poppins', sans-serif;
+    color: #{ $white };
+}
+
+button {
+    cursor: pointer;
+}
+
+[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+html {
+
+    @media(max-width: 1080px) {
+        font-size: 93.75%;
+    }
+    @media(max-width: 720px) {
+        font-size: 87.5%;
+    }
+
+}

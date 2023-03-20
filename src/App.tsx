@@ -1,3 +1,12 @@
+import { Header } from "./components/Header";
+import { Home } from "./components/Home";
+import "./styles/global.scss";
+
 export function App() {
-  return <h1>Hello World!</h1>;
+  return (
+    <>
+      <Header />
+      <Home />
+    </>
+  );
 }

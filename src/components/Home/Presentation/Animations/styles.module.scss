@@ -1,0 +1,113 @@
+.animation-container {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    margin-left: 4rem;
+}
+
+.astronaut {
+    position: absolute;
+
+    animation: movement-astronaut 2s infinite ease-in-out alternate;
+    @keyframes movement-astronaut {
+        to {
+            transform: translate(0, -20px);
+        }
+    }
+}
+
+.glow {
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    margin: 0 auto;
+    opacity: 0.7; 
+    margin-top: 8rem;
+    border-radius: 100%;
+    width: 100px;
+    height: 300px;
+    box-shadow:
+    0 0 60px 30px #fff,
+    0 0 100px 60px #f0f,
+    0 0 140px 80px #0ff;
+    
+}
+
+.java-icon {
+    position: absolute;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    padding: 0.6rem;
+    
+    background-color: var(--light-background);
+    box-shadow:
+    0 0 11px 10px #fff,
+    0 0 21px 20px #f0f,
+    0 0 10px 20px #0ff;
+    animation: movement-java 2s infinite ease-in-out alternate;
+    @keyframes movement-java {
+        to {
+            transform: translate(6px, -8px);
+        }
+    }
+
+}
+
+.react-icon {
+    position: absolute;
+    bottom: 0;
+    right: 3px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    padding: 0.4rem;
+    box-shadow:
+    0 0 11px 8px #fff,
+    0 0 5px 2px #f0f,
+    0 0 21px 20px #0ff;
+    background-color: var(--light-background);
+    animation: movement-react 2.5s infinite ease-in-out alternate;
+
+    @keyframes movement-react {
+        to {
+            transform: translate(10px, 10px);
+        }
+    }
+}
+
+.github-icon {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    padding: 0.1rem;
+    opacity: 0.9;
+    box-shadow:
+    0 0 11px 20px #fff,
+    0 0 20px 14px #f0f,
+    0 0 23px 20px #0ff;
+    background-color: var(--light-background);
+    animation: movement-github 2s infinite ease-in-out alternate;
+    @keyframes movement-github {
+        to {
+            transform: translate(4px, -10px);
+        }
+    }
+
+}
+
+.typescript-icon {
+    position: absolute;
+    bottom: 140px;
+    left: 0px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    padding: 0.1rem;
+    border: 2px solid var(--orange);
+    background-color: var(--light-background);
+}
