@@ -4,12 +4,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
-.about-box-container {
+.about-content {
     width: 100%;
     height: 600px;
     border-radius: 20px;
     background-color: var(--light-black);
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4rem;
+    box-shadow: 1px 6px var(--light-blue);
 }
