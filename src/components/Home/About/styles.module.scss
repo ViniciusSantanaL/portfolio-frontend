@@ -10,6 +10,8 @@
 .about-content {
     width: 100%;
     height: 600px;
+    position: relative;
+    z-index: 2;
     border-radius: 20px;
     background-color: var(--light-black);
     display: flex;
@@ -18,4 +20,24 @@
     flex-wrap: wrap;
     gap: 4rem;
     box-shadow: 1px 6px var(--light-blue);
+}
+
+.about-baby-yoda {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 0;
+    animation: movement-baby-yoda 2s ;
+    z-index: 1;
+
+    @keyframes movement-baby-yoda {
+        from {
+            transform: translateY(0%);
+        }
+        to {
+            transform: translateY(-57%);
+        }
+    }
+
+
 }
