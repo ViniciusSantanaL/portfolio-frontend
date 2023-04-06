@@ -1,5 +1,6 @@
 import { About } from "./About";
 import { Presentation } from "./Presentation";
+import { Works } from "./Works";
 import "./styles.module.scss";
 
 export function Home() {
@@ -7,6 +8,7 @@ export function Home() {
     <main>
       <Presentation />
       <About />
+      <Works />
     </main>
   );
 }
