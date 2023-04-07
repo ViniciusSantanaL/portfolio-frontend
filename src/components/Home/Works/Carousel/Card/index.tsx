@@ -1,16 +1,8 @@
+import { Work } from "src/model/Work.types";
 import styles from "./styles.module.scss";
 
-interface WorkCard {
-  id: number;
-  title: string;
-  dateStart: string;
-  dateEnd: string;
-  description: string;
-  planetImg: string;
-}
-
 interface WorkCardProps {
-  work: WorkCard;
+  work: Work;
 }
 
 export function Card({ work }: WorkCardProps) {
