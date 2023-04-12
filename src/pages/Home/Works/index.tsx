@@ -16,7 +16,11 @@ export function Works() {
         setActualIndexWork={setActualIndexWork}
         works={works}
       />
-      <CarouselStepper carouselSize={works.length} currentStepIndex={actualIndexWork} />
+      <CarouselStepper
+        carouselSize={works.length}
+        currentStepIndex={actualIndexWork}
+        setActualIndexWork={setActualIndexWork}
+      />
     </section>
   );
 }

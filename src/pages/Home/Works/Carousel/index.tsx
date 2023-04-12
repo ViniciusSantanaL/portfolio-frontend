@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { motion, useAnimationControls } from "framer-motion";
 import { Card } from "./Card";
 import { Arrow } from "./Arrow";
 import { Work } from "src/model/Work.types";
@@ -9,6 +11,7 @@ interface CarouselProps {
   setActualIndexWork: React.Dispatch<React.SetStateAction<number>>;
 }
 export function Carousel({ works, actualIndexWork, setActualIndexWork }: CarouselProps) {
+  const controls = useAnimationControls();
   const getPreviousOrNextIndex = (
     currentIndex: number,
     direction: "previous" | "next",
@@ -24,21 +27,31 @@ export function Carousel({ works, actualIndexWork, setActualIndexWork }: Carouse
   };
 
   const handleNextWork = (): void => {
+    controls.start({ opacity: 0 });
     const lastIndex = works.length - 1;
     const nextPosition = getPreviousOrNextIndex(actualIndexWork, "next", lastIndex);
-    setActualIndexWork(nextPosition);
+    setTimeout(() => {
+      setActualIndexWork(nextPosition);
+      controls.start({ opacity: 1, transition: { ease: "easeIn" } });
+    }, 400);
   };
 
   const handlePreviousWork = (): void => {
+    controls.start({ opacity: 0 });
     const lastIndex = works.length - 1;
     const previousIndex = getPreviousOrNextIndex(actualIndexWork, "previous", lastIndex);
-    setActualIndexWork(previousIndex);
+    setTimeout(() => {
+      setActualIndexWork(previousIndex);
+      controls.start({ opacity: 1, transition: { ease: "easeIn" } });
+    }, 400);
   };
 
   return (
     <div className={styles["carousel-container"]}>
       <Arrow direction="left" onClickEvent={handlePreviousWork} />
-      <Card work={works[actualIndexWork]} />
+      <motion.div animate={controls}>
+        <Card work={works[actualIndexWork]} />
+      </motion.div>
       <Arrow direction="right" onClickEvent={handleNextWork} />
     </div>
   );

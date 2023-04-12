@@ -1,0 +1,35 @@
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 600px;
+
+    h2 {
+        font-size: 3rem;
+        text-shadow: -4px 0 #1C82BC, 0 2px #1C82BC 4px 0 #1C82BC, 0 -1px #1C82BC;
+    }
+
+    img {
+        width: 400px;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    div {
+        p {
+            font-weight: bold;
+            border-radius: 10px;
+            padding: 0.5rem;
+            font-size: 2rem;
+            letter-spacing: 0.4rem;
+        }
+        span {
+            font-weight: bold;
+        }
+    }
+    
+}

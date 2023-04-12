@@ -1,8 +1,15 @@
 header {
+    position: fixed;
+    top: 0;
+    width: 100%;
     background-color: var(--light-background);
+    z-index: 1;
+    
 }
 
 .header-container {
+    
+
     width: 1100px;
     margin: 0 auto;
     padding: 1rem 0rem;

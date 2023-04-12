@@ -6,7 +6,7 @@
             "dateStart": "09/2022",
             "dateEnd": "The moment",
             "description": "Aute officia laboris reprehenderit sit anim commodo occaecat Lorem. Laborum irure aliquip sunt irure excepteur consectetur eiusmod excepteur. Culpa do sint consectetur sint et.",
-            "planetImg": "jupiter.png"
+            "planetImg": "earth.png"
 
         },
         {
@@ -15,7 +15,7 @@
             "dateStart": "05/2022",
             "dateEnd": "12/2022",
             "description": "Aute officia laboris reprehenderit sit anim commodo occaecat Lorem. Laborum irure aliquip sunt irure excepteur consectetur eiusmod excepteur. Culpa do sint consectetur sint et.",
-            "planetImg": "jupiter.png"
+            "planetImg": "saturn.png"
 
         },
         {
@@ -24,7 +24,7 @@
             "dateStart": "11/2021",
             "dateEnd": "05/2022",
             "description": "Aute officia laboris reprehenderit sit anim commodo occaecat Lorem. Laborum irure aliquip sunt irure excepteur consectetur eiusmod excepteur. Culpa do sint consectetur sint et.",
-            "planetImg": "jupiter.png"
+            "planetImg": "pluto.png"
 
         },
         {
@@ -33,7 +33,7 @@
             "dateStart": "08/2020",
             "dateEnd": "11/2021",
             "description": "Aute officia laboris reprehenderit sit anim commodo occaecat Lorem. Laborum irure aliquip sunt irure excepteur consectetur eiusmod excepteur. Culpa do sint consectetur sint et.",
-            "planetImg": "jupiter.png"
+            "planetImg": "moon.png"
 
         }
         

@@ -1,0 +1,66 @@
+.custom-input-container {
+    position: relative;
+    height: 3rem;
+    width: 100%;
+
+    button {
+        text-align: end;
+        height: 3rem;
+        border-style: none;
+        background: transparent;
+        width: 100%;
+        font-size: 1.8rem;
+        position: absolute;
+        right: 0.2rem;
+
+        &:hover {
+            
+            outline: 0;
+            
+        }
+        
+        svg {
+            margin: 13px 10px;
+            
+        }
+    }    
+}
+
+.custom-input-label {
+    position: absolute;
+    cursor: text;
+    top: 0.7rem;
+    left: 0.4rem;
+    font-size: 18px;
+    font-weight: 700;
+    background-color: var(--light-black);
+    padding: 0 1rem;
+    transition: top 200ms ease-in, font-size 200ms ease-in;
+    
+}
+
+.custom-input {
+    width: 100%;
+    border: 1px solid #fff;
+    background-color: var(--light-back);
+    border-radius: 10px;
+    padding: 15px 20px;
+    
+   &:hover {
+    border-color: gray;
+   }
+}
+
+
+.custom-input:focus ~ .custom-input-label,
+.custom-input:not(:placeholder-shown).custom-input:not(:focus) ~ .custom-input-label {
+    top: -0.6rem;
+    font-size: 0.8rem;
+    
+}
+
+
+
+
+
+
