@@ -14,11 +14,7 @@ export function Research() {
     { label: "C", value: 5, imagePath: "src/assets/java-icon.png" },
   ]);
 
-  const handleAddTechnology = (technology: Technology) => {
-    console.log("oi");
-
-    setTechnologies([...technologies, ...technologies]);
-  };
+  const handleAddTechnology = (technology: Technology) => {};
 
   useEffect(() => {
     console.log(technologies);
@@ -28,7 +24,11 @@ export function Research() {
     <div className={styles["research-container"]}>
       <div className={styles["research-content"]}>
         <div className={styles["group-input"]}>
-          <Select items={technologies} handleSelectItem={handleAddTechnology} />
+          <Select
+            label="Technologies"
+            items={technologies}
+            handleSelectItem={handleAddTechnology}
+          />
         </div>
       </div>
     </div>

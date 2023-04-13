@@ -1,11 +1,19 @@
-import { useRef, forwardRef, InputHTMLAttributes, PropsWithChildren, ForwardedRef } from "react";
+import {
+  useRef,
+  forwardRef,
+  InputHTMLAttributes,
+  PropsWithChildren,
+  ForwardedRef,
+  ButtonHTMLAttributes,
+} from "react";
 import { HTMLMotionProps, motion } from "framer-motion";
 import styles from "./styles.module.scss";
 
-interface InputProps extends HTMLMotionProps<"div"> {
+interface InputProps {
   label: string;
-  type?: string;
   inputProps?: InputHTMLAttributes<HTMLInputElement>;
+  inputButtonProps?: ButtonHTMLAttributes<HTMLButtonElement>;
+  motionProps: HTMLMotionProps<"div">;
   onBlur?: () => void;
   onFocus?: () => void;
   handleClickIcon?: () => void;
@@ -16,20 +24,7 @@ interface InputProps extends HTMLMotionProps<"div"> {
 }
 
 export const MyInput = forwardRef(function Input(
-  {
-    label,
-    type = "text",
-    inputProps,
-    onBlur,
-    onFocus,
-    handleClickIcon,
-    onBlurButton,
-    onButtonMouseHover,
-    onButtonMouseLeave,
-    onKeyDown,
-    children,
-    ...props
-  }: PropsWithChildren<InputProps>,
+  { label, inputProps, inputButtonProps, motionProps, children }: PropsWithChildren<InputProps>,
   ref: ForwardedRef<HTMLInputElement>
 ) {
   const refInput = useRef<HTMLInputElement | null>(null);
@@ -41,14 +36,13 @@ export const MyInput = forwardRef(function Input(
   };
 
   return (
-    <motion.div className={styles["custom-input-container"]} {...props} tabIndex={-2}>
+    <motion.div className={styles["custom-input-container"]} {...motionProps} tabIndex={-2}>
       <input
-        type="text"
         id={label}
         ref={ref ?? refInput}
         className={styles["custom-input"]}
         placeholder=" "
-        onBlur={onBlur}
+        {...inputProps}
       />
       <label htmlFor={label} className={styles["custom-input-label"]}>
         {label}
@@ -56,10 +50,8 @@ export const MyInput = forwardRef(function Input(
       {children && (
         <button
           tabIndex={-1}
-          onMouseLeave={onButtonMouseLeave}
-          onMouseEnter={onButtonMouseHover}
-          onBlur={onBlurButton}
-          onClick={handleClickIcon ?? onClickIcon}
+          onClick={inputButtonProps?.onClick ?? onClickIcon}
+          {...inputButtonProps}
         >
           {children}
         </button>

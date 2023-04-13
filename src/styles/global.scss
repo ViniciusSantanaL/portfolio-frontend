@@ -46,3 +46,14 @@ html {
     }
 
 }
+
+::-webkit-scrollbar {
+    background-color:gray;
+    width: 10px;
+    
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    border-radius: 5px;
+}

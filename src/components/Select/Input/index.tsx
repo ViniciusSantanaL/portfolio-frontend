@@ -1,4 +1,4 @@
-import { useRef, forwardRef, useState } from "react";
+import { useRef, forwardRef, useState, useImperativeHandle, ForwardedRef } from "react";
 import { HiArrowSmDown } from "react-icons/hi";
 import { MyInput } from "src/components/Input";
 
@@ -6,52 +6,65 @@ interface SelectInputProps {
   label: string;
   isOpen: boolean;
   handleSelectOpen: (isOpen: boolean) => void;
+  handleChangeInput: (value: string) => void;
 }
 
-export const SelectInput = forwardRef(function ({
-  label,
-  isOpen,
-  handleSelectOpen,
-}: SelectInputProps) {
+export interface InputHandle {
+  clearInput: () => string;
+}
+
+const SelectInput: React.ForwardRefRenderFunction<InputHandle, SelectInputProps> = (props, ref) => {
   const [isMouseHover, setIsMouseHover] = useState(false);
   const inputRef = useRef<HTMLInputElement | null>(null);
 
-  const handleMouseOver = () => setIsMouseHover(true);
+  const handleMouseEnter = () => setIsMouseHover(true);
   const handleMouseLeave = () => setIsMouseHover(false);
+  const clearInput = () => (inputRef.current!.value = "");
 
   const handleCloseDropDown = () => {
     if (!isMouseHover) {
-      handleSelectOpen(false);
+      props.handleSelectOpen(false);
     }
   };
 
-  const handleClickInputIcon = () => {
+  const handleClickInputButton = () => {
     if (inputRef.current) {
-      if (!isOpen) {
+      if (!props.isOpen) {
         inputRef.current.focus();
-        handleSelectOpen(true);
+        props.handleSelectOpen(true);
       } else {
-        handleSelectOpen(false);
+        props.handleSelectOpen(false);
       }
     }
   };
 
+  useImperativeHandle(ref, () => {
+    return { clearInput };
+  });
+
   return (
     <MyInput
-      label={label}
       ref={inputRef}
-      whileTap={{ scale: 0.97 }}
-      onButtonMouseHover={handleMouseOver}
-      onButtonMouseLeave={handleMouseLeave}
-      onBlur={handleCloseDropDown}
-      handleClickIcon={handleClickInputIcon}
+      label={props.label}
+      motionProps={{ whileTap: { scale: 0.97 } }}
+      inputProps={{
+        onChange: (e) => props.handleChangeInput(e.target.value),
+        onBlur: handleCloseDropDown,
+      }}
+      inputButtonProps={{
+        onClick: handleClickInputButton,
+        onMouseEnter: handleMouseEnter,
+        onMouseLeave: handleMouseLeave,
+      }}
     >
       <HiArrowSmDown
         style={{
           transition: `transform 0.5s ease-in-out`,
-          transform: `rotate(${isOpen ? 180 : 0}deg)`,
+          transform: `rotate(${props.isOpen ? 180 : 0}deg)`,
         }}
       />
     </MyInput>
   );
-});
+};
+
+export default forwardRef(SelectInput);

@@ -23,7 +23,7 @@ const motionVariants: Variants = {
   },
 };
 
-interface DropdownItem {
+export interface DropdownItem {
   label: string;
   value: number;
   imagePath: string;
@@ -39,7 +39,8 @@ export function Dropdown({ isOpen, items, handleSelectItem }: DropdownProps) {
   return (
     <motion.ul
       variants={motionVariants}
-      className={`${styles["dropdown-container"]} ${isOpen ? styles.isClickable : ""}`}
+      className={styles["dropdown-container"]}
+      style={{ pointerEvents: isOpen ? "auto" : "none" }}
     >
       {items.map((item, index) => (
         <DropdownItem
