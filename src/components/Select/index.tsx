@@ -16,7 +16,10 @@ export function Select({ label, items, handleSelectItem }: SelectProps) {
 
   const inputRef = useRef<InputHandle>(null);
 
-  const itemFiltered = items.filter((item) => !selectInput || item.label.includes(selectInput));
+  const itemFiltered = items.filter(
+    (item) =>
+      !selectInput || item.label.toLocaleLowerCase().includes(selectInput.toLocaleLowerCase())
+  );
 
   const handleChangeInput = (value: string) => setSelectInput(value);
   const handleSelectOpen = (value: boolean) => setIsOpen(value);

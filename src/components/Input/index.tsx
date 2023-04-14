@@ -13,7 +13,7 @@ interface InputProps {
   label: string;
   inputProps?: InputHTMLAttributes<HTMLInputElement>;
   inputButtonProps?: ButtonHTMLAttributes<HTMLButtonElement>;
-  motionProps: HTMLMotionProps<"div">;
+  motionProps?: HTMLMotionProps<"div">;
   onBlur?: () => void;
   onFocus?: () => void;
   handleClickIcon?: () => void;

@@ -24,6 +24,7 @@ export function Research() {
     <div className={styles["research-container"]}>
       <div className={styles["research-content"]}>
         <div className={styles["group-input"]}>
+          <MyInput label="Project Name" />
           <Select
             label="Technologies"
             items={technologies}
