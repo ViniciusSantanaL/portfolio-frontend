@@ -1,5 +1,6 @@
 import { motion, Variants } from "framer-motion";
 import { DropdownItem } from "./Item";
+import { DropdownNoContent } from "./NoContent";
 import styles from "./styles.module.scss";
 
 const motionVariants: Variants = {
@@ -42,14 +43,18 @@ export function Dropdown({ isOpen, items, handleSelectItem }: DropdownProps) {
       className={styles["dropdown-container"]}
       style={{ pointerEvents: isOpen ? "auto" : "none" }}
     >
-      {items.map((item, index) => (
-        <DropdownItem
-          key={index}
-          label={item.label}
-          imagePath={item.imagePath}
-          handleItem={() => handleSelectItem(item)}
-        />
-      ))}
+      {items.length > 0 ? (
+        items.map((item, index) => (
+          <DropdownItem
+            key={index}
+            label={item.label}
+            imagePath={item.imagePath}
+            handleItem={() => handleSelectItem(item)}
+          />
+        ))
+      ) : (
+        <DropdownNoContent />
+      )}
     </motion.ul>
   );
 }

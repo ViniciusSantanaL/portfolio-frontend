@@ -22,6 +22,7 @@ export function Select({ label, items, handleSelectItem }: SelectProps) {
   const handleSelectOpen = (value: boolean) => setIsOpen(value);
   const setDropdownItem = (item: DropdownItem) => {
     handleSelectItem(item);
+    setSelectInput("");
     inputRef.current?.clearInput();
   };
 
