@@ -1,3 +1,0 @@
-Nome do Imovel
-Preco do Imovel
-Area do Imovel

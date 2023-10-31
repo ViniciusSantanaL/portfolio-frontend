@@ -1,50 +1,62 @@
+import { HTMLMotionProps, motion } from 'framer-motion'
 import {
-  useRef,
-  forwardRef,
+  ButtonHTMLAttributes,
+  ForwardedRef,
   InputHTMLAttributes,
   PropsWithChildren,
-  ForwardedRef,
-  ButtonHTMLAttributes,
-} from "react";
-import { HTMLMotionProps, motion } from "framer-motion";
-import styles from "./styles.module.scss";
+  forwardRef,
+  useRef,
+} from 'react'
+import styles from './styles.module.scss'
 
 interface InputProps {
-  label: string;
-  inputProps?: InputHTMLAttributes<HTMLInputElement>;
-  inputButtonProps?: ButtonHTMLAttributes<HTMLButtonElement>;
-  motionProps?: HTMLMotionProps<"div">;
-  onBlur?: () => void;
-  onFocus?: () => void;
-  handleClickIcon?: () => void;
-  onBlurButton?: () => void;
-  onButtonMouseHover?: () => void;
-  onButtonMouseLeave?: () => void;
-  onKeyDown?: React.KeyboardEventHandler<HTMLInputElement>;
+  label: string
+  inputProps?: InputHTMLAttributes<HTMLInputElement>
+  inputButtonProps?: ButtonHTMLAttributes<HTMLButtonElement>
+  motionProps?: HTMLMotionProps<'div'>
+  onBlur?: () => void
+  onFocus?: () => void
+  handleClickIcon?: () => void
+  onBlurButton?: () => void
+  onButtonMouseHover?: () => void
+  onButtonMouseLeave?: () => void
+  onKeyDown?: React.KeyboardEventHandler<HTMLInputElement>
 }
 
 export const MyInput = forwardRef(function Input(
-  { label, inputProps, inputButtonProps, motionProps, children }: PropsWithChildren<InputProps>,
-  ref: ForwardedRef<HTMLInputElement>
+  {
+    label,
+    inputProps,
+    inputButtonProps,
+    motionProps,
+    children,
+  }: PropsWithChildren<InputProps>,
+  ref: ForwardedRef<HTMLInputElement>,
 ) {
-  const refInput = useRef<HTMLInputElement | null>(null);
+  const refInput = useRef<HTMLInputElement | null>(null)
 
   const onClickIcon = () => {
     if (!ref) {
-      refInput.current!.focus();
+      if (refInput !== null && refInput.current !== null) {
+        refInput.current.focus()
+      }
     }
-  };
+  }
 
   return (
-    <motion.div className={styles["custom-input-container"]} {...motionProps} tabIndex={-2}>
+    <motion.div
+      className={styles['custom-input-container']}
+      {...motionProps}
+      tabIndex={-2}
+    >
       <input
         id={label}
         ref={ref ?? refInput}
-        className={styles["custom-input"]}
+        className={styles['custom-input']}
         placeholder=" "
         {...inputProps}
       />
-      <label htmlFor={label} className={styles["custom-input-label"]}>
+      <label htmlFor={label} className={styles['custom-input-label']}>
         {label}
       </label>
       {children && (
@@ -57,5 +69,5 @@ export const MyInput = forwardRef(function Input(
         </button>
       )}
     </motion.div>
-  );
-});
+  )
+})
