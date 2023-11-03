@@ -1,32 +1,46 @@
-import axios from 'axios'
-import styles from './styles.module.scss'
+'use client'
+
+import { useState } from 'react'
+import { Menu } from 'lucide-react'
+import { twMerge } from 'tailwind-merge'
+import { NavBar } from './Nav'
 
 export function Header() {
-  async function test() {
-    axios
-      .get('https://jira-clone-api-production.up.railway.app/api/v1/teams', {
-        headers: {
-          Authorization:
-            'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdXRob3JpdGllcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9VU0VSIn1dLCJzdWIiOiJ2aW5pQUFBIiwiaWF0IjoxNjg3MjA2MjY0LCJleHAiOjE2ODcyOTI2NjR9.fAl4GiOSEjZWs47bE5W1FA3fGjhafyQca0FgmXRRmIo',
-        },
-      })
-      .then((response) => console.log(response))
-      .catch((error) => console.log(error))
-  }
+  const [isOpenHeader, setIsOpenHeader] = useState(false)
+
   return (
-    <header>
-      <div className={styles['header-container']}>
-        <h1>
-          Viniciussls<span>.</span>
+    <header className="fixed w-full top-0 bg-gray-850  text-neutral-50 z-50">
+      <div className="relative max-w-[1116px] mx-auto py-1 px-4 flex justify-between items-center h-20 border-b border-gray-500 lg:border-none">
+        <h1 className="text-2xl">
+          Viniciussls<span className="text-4xl text-blue-550">.</span>
         </h1>
-        <nav>
-          <a>Home</a>
-          <a>About</a>
-          <a>Works</a>
-          <a>Projects</a>
-          <a>Skills</a>
-        </nav>
-        <button onClick={() => test()}>Contact Me</button>
+
+        <NavBar />
+
+        <button className="hidden lg:block bg-transparent p-2 rounded-lg border border-blue-550 font-medium text-xs w-28 hover:bg-blue-550 transition-colors duration-500 ">
+          Contact Me
+        </button>
+
+        <button
+          type="button"
+          className="lg:hidden"
+          onClick={() => setIsOpenHeader((state) => !state)}
+        >
+          <Menu className="h-6 w-6" />
+        </button>
+        <div
+          className={twMerge(
+            'lg:hidden w-screen bg-gray-850 h-screen top-0 right-0 -z-10 pt-2 pb-10',
+            `${isOpenHeader ? 'fixed' : 'hidden'}`,
+          )}
+        >
+          <div className="w-full h-full flex justify-around items-center flex-col">
+            <NavBar variant="mobile" />
+            <button className="bg-transparent p-2 rounded-lg border border-blue-550 font-medium text-xs w-28 hover:bg-blue-550 transition-colors duration-500 ">
+              Contact Me
+            </button>
+          </div>
+        </div>
       </div>
     </header>
   )

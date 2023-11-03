@@ -3,21 +3,17 @@ import { Project } from '@/components/Home/Project'
 import { Works } from '@/components/Home/Works'
 import { Presentation } from '@/components/Home/Presentation'
 import { Header } from '@/components/Header'
-import './styles.module.scss'
 
 export default function Home() {
   return (
     <>
       <Header />
-      <main>
+      <main className="max-w-[1116px] mx-auto px-4 relative">
         <Presentation />
-        <About />
+        {/* <About />
         <Works />
-        <Project />
+        <Project /> */}
       </main>
-      <footer>
-        <h1>Hello</h1>
-      </footer>
     </>
   )
 }

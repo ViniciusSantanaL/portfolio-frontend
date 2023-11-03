@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  background-image: url("/assets/background-sky.png");
+  background-color: #121214;
+}
+
+body, input, textarea, button {
+  color: #ffff
+}
+
+[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

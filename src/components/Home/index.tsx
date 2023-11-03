@@ -7,11 +7,11 @@ import './styles.module.scss'
 export function Home() {
   return (
     <>
-      <main>
+      <main className="max-w-[1116px] mx-auto">
         <Presentation />
-        <About />
+        {/* <About />
         <Works />
-        <Project />
+        <Project /> */}
       </main>
       <footer>
         <h1>Hello</h1>
