@@ -3,7 +3,7 @@ import { Roboto } from 'next/font/google'
 import { ReactNode } from 'react'
 import './global.css'
 
-const roboto = Roboto({ subsets: ['latin'], weight: '400' })
+const roboto = Roboto({ subsets: ['latin'], weight: ['400', '500', '700'] })
 
 export const metadata: Metadata = {
   title: 'Viniciussls',

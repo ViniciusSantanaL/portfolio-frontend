@@ -30,7 +30,7 @@ const navbar = tv({
   variants: {
     variant: {
       principal: 'flex gap-4',
-      mobile: 'flex flex-col justify-between items-center gap-10',
+      mobile: 'flex flex-col justify-between items-center gap-10 z-50',
     },
   },
   defaultVariants: {

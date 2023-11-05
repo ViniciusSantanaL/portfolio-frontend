@@ -10,8 +10,8 @@ export default function Home() {
       <Header />
       <main className="max-w-[1116px] mx-auto px-4 relative">
         <Presentation />
-        {/* <About />
-        <Works />
+        <About />
+        {/*  <Works />
         <Project /> */}
       </main>
     </>
