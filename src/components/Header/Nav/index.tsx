@@ -14,15 +14,11 @@ const navItems: NavItemProps[] = [
   },
   {
     value: '3',
-    label: 'Works',
+    label: 'Experiences',
   },
   {
     value: '4',
     label: 'Projects',
-  },
-  {
-    value: '5',
-    label: 'Skills',
   },
 ]
 

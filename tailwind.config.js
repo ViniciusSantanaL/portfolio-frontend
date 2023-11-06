@@ -30,6 +30,8 @@ module.exports = {
       textShadow: {
         principal:
           '-1px 0 #483285, 0 2px #483285, 4px 0 #483285, 0 -1px #483285',
+        secondary:
+          '-1px 0 #4863f7, 0 2px #4863f7, 4px 0 #4863f7, 0 -1px #4863f7',
       },
       boxShadow: {
         glow: '0 0 60px 30px #fff, 0 0 90px 60px #f0f, 0 0 120px 80px #0ff',

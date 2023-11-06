@@ -11,8 +11,8 @@ export default function Home() {
       <main className="max-w-[1116px] mx-auto px-4 relative">
         <Presentation />
         <About />
-        {/*  <Works />
-        <Project /> */}
+        <Works />
+        <Project />
       </main>
     </>
   )

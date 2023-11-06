@@ -1,8 +1,10 @@
+'use client'
+
 import { motion } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { Dropdown, DropdownItem } from './Dropdown'
 import SelectInput, { InputHandle } from './Input'
-import styles from './styles.module.scss'
+import styles from './styles.module.css'
 
 interface SelectProps {
   label: string
@@ -42,11 +44,13 @@ export function Select({ label, items, handleSelectItem }: SelectProps) {
         handleSelectOpen={handleSelectOpen}
         handleChangeInput={handleChangeInput}
       />
-      <Dropdown
-        isOpen={isOpen}
-        items={itemFiltered}
-        handleSelectItem={setDropdownItem}
-      />
+      {isOpen && (
+        <Dropdown
+          isOpen={isOpen}
+          items={itemFiltered}
+          handleSelectItem={setDropdownItem}
+        />
+      )}
     </motion.div>
   )
 }

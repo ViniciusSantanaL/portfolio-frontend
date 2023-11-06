@@ -1,4 +1,5 @@
-import styles from 'src/pages/Home/Project/ListCard/ControlCard/styles.module.scss'
+'use client'
+
 import React, { useCallback } from 'react'
 
 interface ControlListCardProps {
@@ -26,18 +27,27 @@ export function ControlListCard({
   }, [actualPositions])
 
   return (
-    <div className={styles['control-cards-container']}>
-      <button className={styles['control-cards-previous-button']}>
+    <div className="mt-4 flex justify-end items-center gap-4">
+      <button className="w-28 bg-blue-550 p-2 rounded-lg font-medium text-xs hover:brightness-90">
         PREVIOUS
       </button>
-      <div className={styles['control-cars-span-container']}>
-        <span>1</span>
-        <span>2</span>
-        <span>3</span>
-        <span>4</span>
-        <span>...10</span>
+      <div className="flex items-center gap-2">
+        <button className="cursor-pointer bg-gray-850 rounded-md text-xl hover:brightness-75 py-1 px-3">
+          1
+        </button>
+        <button className="cursor-pointer bg-gray-850 rounded-md text-xl hover:brightness-75 py-1 px-3">
+          2
+        </button>
+        <button className="cursor-pointer bg-gray-850 rounded-md text-xl hover:brightness-75 py-1 px-3">
+          3
+        </button>
+        <button className="cursor-pointer bg-gray-850 rounded-md text-xl hover:brightness-75 py-1 px-3">
+          4
+        </button>
       </div>
-      <button className={styles['control-cards-next-button']}>NEXT</button>
+      <button className="w-28 bg-purple-750 p-2 rounded-lg font-medium text-xs hover:brightness-90">
+        NEXT
+      </button>
     </div>
   )
 }

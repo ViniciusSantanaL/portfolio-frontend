@@ -1,7 +1,7 @@
 import { motion, Variants } from 'framer-motion'
 import { DropdownItem } from './Item'
 import { DropdownNoContent } from './NoContent'
-import styles from './styles.module.scss'
+import styles from './styles.module.css'
 
 const motionVariants: Variants = {
   open: {
@@ -32,11 +32,15 @@ export interface DropdownItem {
 
 interface DropdownProps {
   items: Array<DropdownItem>
-  isOpen: boolean
+  isOpen?: boolean
   handleSelectItem: (item: DropdownItem) => void
 }
 
-export function Dropdown({ isOpen, items, handleSelectItem }: DropdownProps) {
+export function Dropdown({
+  isOpen = false,
+  items,
+  handleSelectItem,
+}: DropdownProps) {
   return (
     <motion.ul
       variants={motionVariants}

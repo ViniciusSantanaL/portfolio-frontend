@@ -1,6 +1,6 @@
 import { forwardRef, useImperativeHandle, useRef, useState } from 'react'
 import { HiArrowSmDown } from 'react-icons/hi'
-import { MyInput } from 'src/components/Input'
+import { MyInput } from '@/components/Input'
 
 interface SelectInputProps {
   label: string
@@ -70,6 +70,7 @@ const SelectInput: React.ForwardRefRenderFunction<
     >
       <HiArrowSmDown
         style={{
+          margin: '13px 10px',
           transition: `transform 0.5s ease-in-out`,
           transform: `rotate(${props.isOpen ? 180 : 0}deg)`,
         }}

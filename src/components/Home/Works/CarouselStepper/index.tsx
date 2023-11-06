@@ -1,3 +1,4 @@
+import { twMerge } from 'tailwind-merge'
 import styles from './styles.module.scss'
 
 interface CarouselStepperProps {
@@ -12,17 +13,24 @@ export function CarouselStepper({
   setActualIndexWork,
 }: CarouselStepperProps) {
   return (
-    <div className={styles['carousel-stepper-container']}>
+    <div className="flex gap-4">
       {Array(carouselSize)
         .fill(null)
         .map((__, index) => (
-          <div
+          <button
             key={index}
             onClick={() => setActualIndexWork(index)}
-            className={`${styles['carousel-step']} ${
-              index === currentStepIndex ? styles.current : ''
-            }`}
-          ></div>
+            className={twMerge(
+              'w-[80px] h-[15px] border-[2px] border-neutral-50 cursor-pointer',
+              'first:rounded-l-2xl',
+              'last:rounded-r-2xl',
+              `${
+                index === currentStepIndex
+                  ? 'bg-neutral-50 transition-colors'
+                  : ''
+              }`,
+            )}
+          ></button>
         ))}
     </div>
   )

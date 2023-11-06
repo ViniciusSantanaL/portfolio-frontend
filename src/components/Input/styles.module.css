@@ -1,0 +1,61 @@
+.custom-input-container {
+    position: relative;
+    height: 3rem;
+    width: 100%;  
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    top: 0;
+    height: 3.5rem;
+    background: transparent;
+    width: 100%;
+    font-size: 1.8rem;
+    position: absolute;
+}
+
+.icon:hover {
+    outline: 0;
+}
+
+.custom-input-label {
+    position: absolute;
+    cursor: text;
+    border-radius: 999px  999px 0px 0px ;
+    top: 0.7rem;
+    left: 0.4rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    background-color: #202024;
+    padding: 0 10px;
+
+    transition: top 200ms ease-in, font-size 200ms ease-in;
+    
+}
+
+.custom-input {
+    width: 100%;
+    border: 1px solid #fff;
+    background-color: #202024;
+    border-radius: 10px;
+    padding: 15px 20px;
+}
+
+.custom-input:hover {
+    border-color: gray;
+}
+
+.custom-input:focus ~ .custom-input-label,
+.custom-input:not(:placeholder-shown).custom-input:not(:focus) ~ .custom-input-label {
+    top: -0.6rem;
+    font-size: 1rem;
+    
+}
+
+
+
+
+
+

@@ -1,5 +1,5 @@
 import { motion, useAnimationControls } from 'framer-motion'
-import { Work } from 'src/model/Work.types'
+import { Work } from '@/model/Work.types'
 import { Arrow } from './Arrow'
 import { Card } from './Card'
 import styles from './styles.module.scss'
@@ -40,7 +40,7 @@ export function Carousel({
     setTimeout(() => {
       setActualIndexWork(nextPosition)
       controls.start({ opacity: 1, transition: { ease: 'easeIn' } })
-    }, 400)
+    }, 200)
   }
 
   const handlePreviousWork = (): void => {
@@ -54,11 +54,11 @@ export function Carousel({
     setTimeout(() => {
       setActualIndexWork(previousIndex)
       controls.start({ opacity: 1, transition: { ease: 'easeIn' } })
-    }, 400)
+    }, 200)
   }
 
   return (
-    <div className={styles['carousel-container']}>
+    <div className="max-w-[1110px] rounded-xl flex justify-between items-center">
       <Arrow direction="left" onClickEvent={handlePreviousWork} />
       <motion.div animate={controls}>
         <Card work={works[actualIndexWork]} />

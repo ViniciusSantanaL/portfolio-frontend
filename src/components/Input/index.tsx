@@ -1,3 +1,5 @@
+'use client'
+
 import { HTMLMotionProps, motion } from 'framer-motion'
 import {
   ButtonHTMLAttributes,
@@ -7,7 +9,7 @@ import {
   forwardRef,
   useRef,
 } from 'react'
-import styles from './styles.module.scss'
+import styles from './styles.module.css'
 
 interface InputProps {
   label: string
@@ -61,6 +63,7 @@ export const MyInput = forwardRef(function Input(
       </label>
       {children && (
         <button
+          className={styles.icon}
           tabIndex={-1}
           onClick={inputButtonProps?.onClick ?? onClickIcon}
           {...inputButtonProps}
