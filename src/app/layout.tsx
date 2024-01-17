@@ -6,7 +6,7 @@ import './global.css'
 const roboto = Roboto({ subsets: ['latin'], weight: ['400', '500', '700'] })
 
 export const metadata: Metadata = {
-  title: 'Viniciussls',
+  title: 'Vinicius Leão',
   description: 'My Portfolio',
 }
 

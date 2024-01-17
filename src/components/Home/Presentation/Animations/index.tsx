@@ -1,10 +1,9 @@
-import styles from './styles.module.scss'
 import Image from 'next/image'
 
 export function Animations() {
   return (
     <div className="w-full flex items-center  justify-center lg:justify-end ">
-      <div className="relative w-full max-w-xs lg:max-w-md">
+      <div className="relative w-full max-w-xs lg:max-w-[360] xl:max-w-md">
         <Image
           width={500}
           height={500}

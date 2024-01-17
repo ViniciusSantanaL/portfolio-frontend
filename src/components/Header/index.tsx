@@ -36,7 +36,7 @@ export function Header() {
         >
           <div className="w-full h-full flex justify-around items-center flex-col">
             <NavBar variant="mobile" />
-            <button className="bg-transparent p-2 rounded-lg border border-blue-550 font-medium text-xs w-28 hover:bg-blue-550 transition-colors duration-500 ">
+            <button className="bg-transparent p-2 rounded-lg border border-blue-550 font-medium text-xs w-28 hover:bg-blue-550 transition-colors duration-500">
               Contact Me
             </button>
           </div>
